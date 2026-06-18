@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+import { toPng } from 'html-to-image';
 import Icon from '@/components/ui/icon';
 
 const CAKE_IMG =
@@ -10,6 +12,26 @@ const benefits = [
 ];
 
 const Index = () => {
+  const labelRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleDownload = async () => {
+    if (!labelRef.current) return;
+    setLoading(true);
+    try {
+      const dataUrl = await toPng(labelRef.current, {
+        pixelRatio: 3,
+        cacheBust: true,
+      });
+      const link = document.createElement('a');
+      link.download = 'etiketka-baluev-lavandovyy.png';
+      link.href = dataUrl;
+      link.click();
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-mist font-sans text-plum">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-16">
@@ -18,7 +40,10 @@ const Index = () => {
         </p>
 
         {/* ЭТИКЕТКА — горизонтальная развёртка */}
-        <div className="relative mx-auto aspect-[1080/495] w-full animate-fade-up overflow-hidden rounded-3xl shadow-[0_40px_100px_-30px_rgba(59,33,84,0.6)] ring-1 ring-plum/10">
+        <div
+          ref={labelRef}
+          className="relative mx-auto aspect-[1080/495] w-full animate-fade-up overflow-hidden rounded-3xl shadow-[0_40px_100px_-30px_rgba(59,33,84,0.6)] ring-1 ring-plum/10"
+        >
           {/* основной фон-градиент */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#2A1640] via-[#3B2154] to-[#4A2A66]" />
 
@@ -168,6 +193,21 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={handleDownload}
+            disabled={loading}
+            className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#3B2154] to-[#6E4D9E] px-8 py-4 font-cond text-lg font-semibold uppercase tracking-wide text-goldlight shadow-[0_20px_40px_-15px_rgba(59,33,84,0.7)] ring-1 ring-gold/40 transition hover:scale-105 hover:shadow-[0_25px_50px_-12px_rgba(59,33,84,0.8)] disabled:opacity-60"
+          >
+            <Icon
+              name={loading ? 'Loader' : 'Download'}
+              size={22}
+              className={loading ? 'animate-spin' : 'transition group-hover:translate-y-0.5'}
+            />
+            {loading ? 'Готовим файл…' : 'Скачать этикетку'}
+          </button>
         </div>
 
         <p className="mt-6 text-center font-hand text-2xl text-lavender/60">
