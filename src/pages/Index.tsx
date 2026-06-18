@@ -45,7 +45,7 @@ const Index = () => {
         {/* ЭТИКЕТКА — горизонтальная развёртка */}
         <div
           ref={labelRef}
-          className="relative mx-auto aspect-[1080/495] w-full animate-fade-up overflow-hidden rounded-[1.75rem] bg-[#F6F1FA] shadow-[0_40px_100px_-30px_rgba(91,62,140,0.5)] ring-1 ring-plum/10"
+          className="relative mx-auto aspect-[1080/495] w-full animate-fade-up overflow-hidden rounded-[1.75rem] bg-[#7C5CB0] shadow-[0_40px_100px_-30px_rgba(91,62,140,0.5)] ring-1 ring-plum/10"
         >
           {/* небрежные рукотворные волны СВЕРХУ */}
           <svg
@@ -71,49 +71,51 @@ const Index = () => {
             <path d="M0,180 L1080,180 L1080,154 C850,108 680,166 480,134 C300,104 150,172 0,142 Z" fill="#F3ECDD" />
           </svg>
 
-          {/* ЛОГОТИП «Балуево» — официальный брендовый файл */}
+          {/* ЛОГОТИП «Балуево» — официальный брендовый файл на фирменной бежевой плашке */}
           <div className="absolute left-1/2 top-[5%] z-20 -translate-x-1/2">
-            <img
-              src={LOGO_IMG}
-              alt="Балуево — Алтайский кондитерский дом"
-              className="h-12 w-auto object-contain md:h-16"
-            />
+            <div className="rounded-2xl bg-[#E8E0CF] px-5 py-1.5 shadow-md md:px-7 md:py-2">
+              <img
+                src={LOGO_IMG}
+                alt="Балуево — Алтайский кондитерский дом"
+                className="h-9 w-auto object-contain md:h-12"
+              />
+            </div>
           </div>
 
           {/* СЕТКА: лево / центр / право */}
           <div className="absolute inset-0 grid grid-cols-[1.05fr_1.5fr_0.95fr] gap-2 px-7 pb-12 pt-[15%] md:px-10">
             {/* ЛЕВО — состав и инфо */}
-            <div className="flex flex-col justify-center gap-1.5 text-[6.5px] leading-snug text-grape md:text-[9px]">
+            <div className="flex flex-col justify-center gap-1.5 text-[6.5px] leading-snug text-[#EDE6DA] md:text-[9px]">
               <p>
-                <span className="font-semibold text-bgreen">Состав:</span> мука пшеничная
+                <span className="font-semibold text-white">Состав:</span> мука пшеничная
                 высшего сорта, сахар, масло сливочное, яйцо, молоко, экстракт лаванды
                 натуральный, разрыхлитель, краситель пищевой (Е163), ванилин.
               </p>
               <p>
-                <span className="font-semibold text-bgreen">Пищевая ценность</span> на 100
+                <span className="font-semibold text-white">Пищевая ценность</span> на 100
                 г: белки 5,5 г, жиры 18 г, углеводы 40 г. Энерг. ценность 430 ккал.
               </p>
               <p>
-                <span className="font-semibold text-bgreen">Срок годности:</span> 7 суток
+                <span className="font-semibold text-white">Срок годности:</span> 7 суток
                 при +2…+6 °C.
               </p>
               <p>
-                <span className="font-semibold text-bgreen">Изготовитель:</span> ИП Балуев,
+                <span className="font-semibold text-white">Изготовитель:</span> ИП Балуев,
                 Алтайский край, г. Барнаул, ул. Кондитерская, 5.
               </p>
 
               {/* общепринятые значки сертификации */}
               <div className="mt-1 flex items-center gap-2">
                 {/* ЕАС */}
-                <span className="font-cond text-base font-bold tracking-tight text-bgreen md:text-xl">
+                <span className="font-cond text-base font-bold tracking-tight text-white md:text-xl">
                   EAC
                 </span>
                 {/* без ГМО */}
-                <span className="flex items-center gap-1 rounded-full border border-bgreen px-1.5 py-0.5 text-[6px] font-semibold text-bgreen md:text-[7px]">
+                <span className="flex items-center gap-1 rounded-full border border-[#EDE6DA] px-1.5 py-0.5 text-[6px] font-semibold text-[#EDE6DA] md:text-[7px]">
                   <Icon name="Leaf" size={9} /> БЕЗ ГМО
                 </span>
                 {/* РСТ */}
-                <span className="rounded-full border border-bgreen px-1.5 py-0.5 text-[6px] font-bold text-bgreen md:text-[7px]">
+                <span className="rounded-full border border-[#EDE6DA] px-1.5 py-0.5 text-[6px] font-bold text-[#EDE6DA] md:text-[7px]">
                   РСТ
                 </span>
               </div>
@@ -122,14 +124,14 @@ const Index = () => {
             {/* ЦЕНТР — название + фото */}
             <div className="relative flex flex-col items-center justify-center text-center">
               {/* Побалуй-ка — фирменный рукописный шрифт */}
-              <h1 className="font-brand text-4xl leading-[0.9] text-bgreen md:text-6xl">
+              <h1 className="font-brand text-4xl leading-[0.9] text-[#F3ECDD] md:text-6xl">
                 Побалуй-ка
               </h1>
-              <p className="mt-1 font-hand text-xl text-grape md:text-2xl">мини-тортик</p>
+              <p className="mt-1 font-hand text-xl text-lilac md:text-2xl">мини-тортик</p>
 
               <div className="mt-1 flex items-end justify-center gap-3">
                 <div className="text-left">
-                  <p className="font-cond text-2xl font-semibold uppercase leading-none text-grape md:text-4xl">
+                  <p className="font-cond text-2xl font-semibold uppercase leading-none text-white md:text-4xl">
                     Лаван-
                     <br />
                     довый
@@ -138,12 +140,12 @@ const Index = () => {
                 <img
                   src={CAKE_IMG}
                   alt="Лавандовый тортик"
-                  className="h-20 w-20 rounded-full object-cover shadow-md ring-2 ring-bgreen/30 md:h-28 md:w-28"
+                  className="h-20 w-20 rounded-full object-cover shadow-md ring-2 ring-[#F3ECDD]/50 md:h-28 md:w-28"
                 />
               </div>
 
-              <div className="mt-2 flex items-center gap-3 text-grape">
-                <span className="font-cond text-xl font-semibold text-bgreen md:text-2xl">
+              <div className="mt-2 flex items-center gap-3 text-lilac">
+                <span className="font-cond text-xl font-semibold text-white md:text-2xl">
                   500 г
                 </span>
                 <span className="text-[6.5px] leading-tight md:text-[9px]">
@@ -155,14 +157,14 @@ const Index = () => {
 
               {/* СМАЙЛ с ручками-ножками — брендовый, заменить на файл клиента */}
               <div className="absolute -right-2 top-1 md:right-0" data-brand="mascot">
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-grape shadow-md md:h-16 md:w-16">
-                  <Icon name="Smile" size={30} className="text-[#F3ECDD]" />
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-[#F3ECDD] shadow-md md:h-16 md:w-16">
+                  <Icon name="Smile" size={30} className="text-bgreen" />
                   {/* ручки */}
-                  <span className="absolute -left-2 top-1/2 h-0.5 w-3 -rotate-45 rounded bg-grape" />
-                  <span className="absolute -right-2 top-1/2 h-0.5 w-3 rotate-45 rounded bg-grape" />
+                  <span className="absolute -left-2 top-1/2 h-0.5 w-3 -rotate-45 rounded bg-[#F3ECDD]" />
+                  <span className="absolute -right-2 top-1/2 h-0.5 w-3 rotate-45 rounded bg-[#F3ECDD]" />
                   {/* ножки */}
-                  <span className="absolute -bottom-2 left-3 h-3 w-0.5 rotate-12 rounded bg-grape" />
-                  <span className="absolute -bottom-2 right-3 h-3 w-0.5 -rotate-12 rounded bg-grape" />
+                  <span className="absolute -bottom-2 left-3 h-3 w-0.5 rotate-12 rounded bg-[#F3ECDD]" />
+                  <span className="absolute -bottom-2 right-3 h-3 w-0.5 -rotate-12 rounded bg-[#F3ECDD]" />
                 </div>
               </div>
             </div>
@@ -172,10 +174,10 @@ const Index = () => {
               <div className="flex flex-col justify-center gap-2.5">
                 {benefits.map((b) => (
                   <div key={b.title} className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-bgreen bg-[#F3ECDD] text-bgreen md:h-9 md:w-9">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F3ECDD] text-bgreen md:h-9 md:w-9">
                       <Icon name={b.icon} size={15} />
                     </span>
-                    <span className="text-[6.5px] uppercase leading-tight tracking-wide text-grape md:text-[9px]">
+                    <span className="text-[6.5px] uppercase leading-tight tracking-wide text-[#EDE6DA] md:text-[9px]">
                       {b.title}
                       <br />
                       {b.sub}
@@ -186,20 +188,20 @@ const Index = () => {
 
               {/* дата изготовления + штрихкод */}
               <div className="flex h-full items-center gap-1.5">
-                {/* штрихкод */}
-                <div className="flex h-[60%] flex-col items-center justify-center">
+                {/* штрихкод на белой плашке для сканирования */}
+                <div className="flex h-[60%] flex-col items-center justify-center rounded bg-white px-1.5 py-1">
                   <div className="flex h-[80%] items-stretch gap-[1.5px]">
                     {[2, 1, 3, 1, 2, 1, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1, 1, 2].map(
                       (w, i) => (
                         <span
                           key={i}
-                          className="bg-bgreen"
+                          className="bg-black"
                           style={{ width: `${w}px` }}
                         />
                       ),
                     )}
                   </div>
-                  <span className="mt-0.5 text-[5px] tracking-widest text-bgreen md:text-[7px]">
+                  <span className="mt-0.5 text-[5px] tracking-widest text-black md:text-[7px]">
                     4 600000 123456
                   </span>
                 </div>
