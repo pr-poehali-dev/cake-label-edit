@@ -121,10 +121,9 @@ const Index = () => {
 
             {/* ЦЕНТР — название + фото */}
             <div className="relative flex flex-col items-center justify-center text-center">
-              {/* Побалуй-ка — оригинальное написание */}
-              <h1 className="font-cond text-5xl font-bold uppercase leading-[0.85] tracking-tight text-bgreen md:text-7xl">
-                Побалуй
-                <span className="text-grape">-</span>ка
+              {/* Побалуй-ка — фирменный рукописный шрифт */}
+              <h1 className="font-brand text-4xl leading-[0.9] text-bgreen md:text-6xl">
+                Побалуй-ка
               </h1>
               <p className="mt-1 font-hand text-xl text-grape md:text-2xl">мини-тортик</p>
 

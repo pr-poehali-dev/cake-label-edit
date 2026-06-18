@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				display: ['Cormorant', 'serif'],
 				hand: ['Caveat', 'cursive'],
+				brand: ['Pacifico', 'cursive'],
 				cond: ['Oswald', 'sans-serif'],
 				sans: ['Golos Text', 'sans-serif']
 			},
