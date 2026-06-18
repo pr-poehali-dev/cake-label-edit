@@ -5,6 +5,9 @@ import Icon from '@/components/ui/icon';
 const CAKE_IMG =
   'https://cdn.poehali.dev/projects/96ecb6e7-2d07-4bbf-a621-9bcfc55852f1/files/d3bfacb1-c63f-4527-9fd8-3f269049ed2b.jpg';
 
+const LOGO_IMG =
+  'https://cdn.poehali.dev/projects/96ecb6e7-2d07-4bbf-a621-9bcfc55852f1/bucket/1fac1799-3eb8-49d6-ad56-c9aebe85c36b.png';
+
 const benefits = [
   { icon: 'Hand', title: 'Ручная', sub: 'работа' },
   { icon: 'Heart', title: 'С заботой', sub: 'о вас' },
@@ -68,19 +71,13 @@ const Index = () => {
             <path d="M0,180 L1080,180 L1080,154 C850,108 680,166 480,134 C300,104 150,172 0,142 Z" fill="#F3ECDD" />
           </svg>
 
-          {/* ЛОГОТИП «Балуевъ» — брендовый, заменить на файл клиента */}
-          <div className="absolute left-1/2 top-[6%] z-20 -translate-x-1/2">
-            <div
-              className="flex flex-col items-center justify-center rounded-full border-2 border-bgreen bg-[#F3ECDD] px-7 py-1.5 shadow-md"
-              data-brand="logo"
-            >
-              <span className="font-display text-2xl font-bold italic leading-none text-bgreen md:text-3xl">
-                Балуевъ
-              </span>
-              <span className="text-[7px] uppercase tracking-[0.3em] text-bgreenlt md:text-[8px]">
-                кондитерская
-              </span>
-            </div>
+          {/* ЛОГОТИП «Балуево» — официальный брендовый файл */}
+          <div className="absolute left-1/2 top-[5%] z-20 -translate-x-1/2">
+            <img
+              src={LOGO_IMG}
+              alt="Балуево — Алтайский кондитерский дом"
+              className="h-12 w-auto object-contain md:h-16"
+            />
           </div>
 
           {/* СЕТКА: лево / центр / право */}
