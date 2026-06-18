@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				display: ['Cormorant', 'serif'],
 				hand: ['Caveat', 'cursive'],
+				cond: ['Oswald', 'sans-serif'],
 				sans: ['Golos Text', 'sans-serif']
 			},
 			colors: {
@@ -30,6 +31,12 @@ export default {
 				cream: '#F7EFE2',
 				berry: '#9B3B47',
 				sage: '#7A8260',
+				plum: '#3B2154',
+				lavender: '#9B7BC4',
+				lilac: '#C8B3E0',
+				mist: '#F3EDF9',
+				gold: '#C9A24B',
+				goldlight: '#E8D49A',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
